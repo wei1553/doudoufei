@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/login.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/yangshi.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/iconfont.css"/>
+    <script type="text/javascript" src="/javascripts/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="/javascripts/login.js"></script>
+    <script type="text/javascript" src="/javascripts/gVerify.js" ></script>
+  </head>
+  <body>
+  		<div class="box">
+	  		<header>
+	  			<h1><img src="/images/shopex.png"/></h1>
+	  		</header>
+	  		<section>
+	  			<div class="center_">
+	  				<div class="cen_top">
+	  					<img src="/images/ecshop-logo.png"/>
+	  				</div>
+	  				<div class="cen_cen">
+	  					<div class="cen_form">
+	  						<div class="div1">
+	  							<i class="iconfont icon-tubiaozhizuomoban"></i><input type="text" id="username" placeholder="用户名"/>
+	  						</div>
+	  						<div class="div1">
+	  							<i class="iconfont icon-dunpaisuo-tianchong"></i><input type="password" id="psw" placeholder="密码"/>
+	  						</div>
+	  						<div class="yanzhneg div1">
+	  							<i class="iconfont icon-suozi"></i><input type="text" id="codes" placeholder="验证码"/><div id="v_container"></div>
+	  						</div>
+	  						<div class="denglu" onclick="gomain()">
+	  							登录
+	  						</div>
+	  						<div class="bot">
+	  							<label for=""><input type="checkbox" name="" id="" value="" />保存登录信息<a href="javascript:;" class="a1">忘记密码？</a><a href="javascript:;" class="a2">去店铺首页>></a></label>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+	  		</section>
+	  	</div>	  	
+  </body>
+  <script>
+  	//  ajax 调用
+  var verifyCode = new GVerify("v_container");
+	function gomain() {
+		$.ajax({
+			url: "/api/login4ajax",
+			type: "post",
+			data: {
+				username: $("#username").val(),
+				psw: $("#psw").val()
+			},
+			success: function(res) {
+				var re = verifyCode.validate(document.getElementById("codes").value);
+				if(res.code == 1) {
+					if(re){
+						
+						location.href = "/main?r=" + new Date().getTime();
+					}else{
+						alert("验证码错误！")
+					}
+				} else {
+					alert(res.message);
+				}
+			}
+		})
+	}
+	
+	
+  </script>
+</html>

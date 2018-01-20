@@ -1,0 +1,476 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/yangshi.css"/>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/list.css"/>
+	</head>
+	<body>
+		<!---->
+					<h1>
+					<span>CSHOP 管理中心-商品列表</span>
+					<span><img src="/images/jnsy.png"/></span>
+					<span>
+						<a href="javascript:;">+商品列表</a>
+					</span>
+				</h1>
+			<!---->
+			<div class="form-div">
+				<div class="vertical" style="height: 30px;">
+					
+				
+				<img src="../images/icon_search.gif" alt="SEARCH" width="26" height="22" border="0" style="vertical-align: middle;">
+				<!--分类-->
+				<select name="cat_id" style="vertical-align: middle;">
+					<option value="0" selected="selected">所有分类</option>
+					<option value="132">钻石</option>
+					<option value="190">&nbsp;&nbsp;&nbsp;&nbsp;衬衫</option>
+					<option value="193">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;短袖衬衫</option>
+					<option value="194">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长袖衬衫</option>
+					<option value="170">&nbsp;&nbsp;&nbsp;&nbsp;裤子</option>
+					<option value="173">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;休闲裤</option>
+					<option value="623">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;休闲短裤</option>
+				</select>
+				<!--品牌-->
+				<select name="brand_id" style="vertical-align: middle;">
+					<option value="0" selected="selected">所有品牌</option>
+					<option value="44">kk</option>
+					<option value="32">溢彩年华</option>
+					<option value="31">EVENY</option>
+					<option value="30">圣迪奥</option>
+					<option value="29">韩都衣舍</option>
+					<option value="28">betu百图</option>
+					<option value="27">艾夫斯</option>
+				</select>
+				<!--推荐-->
+				<select name="intro_type" style="vertical-align: middle;">
+					<option value="0" selected="selected">全部</option>
+					<option value="is_best">精品</option>
+					<option value="is_new">新品</option>
+					<option value="is_hot">热销</option>
+					<option value="is_promote">特价</option>
+					<option value="all_type">全部推荐</option>
+				</select>
+				<!--上架-->
+				<select name="is_on_sale" style="vertical-align: middle;">
+					<option value="" selected="selected">全部</option>
+					<option value="1">上架</option>
+					<option value="0">下架</option>
+				</select>
+				<!-- 关键字 -->
+				关键字 <input name="keyword" size="15" type="text" id="keyword" placeholder="可通过名称与货号查找" style="color: #ff0; font-size: 10px; vertical-align: middle;" >
+				<input value=" 搜索 " class="button" type="submit" id="search" style="vertical-align: middle;">
+				</div>
+				<!--商品列表-->
+			<div class="list-div" id="listDiv">
+				<ul class="shop_top">
+					<li>
+						<input type="checkbox">
+						<a href="javascript:;">编号</a><img src="../images/sort_desc.gif">
+					</li>
+					<li>
+						<a href="javascript:;">商品名称</a>
+					</li>
+					<li>
+						<a href="javascript:;">货号</a>
+					</li>
+					<li>
+						<a href="javascript:;">价格</a>
+					</li>
+					<li>
+						<a href="javascript:;">上架</a>
+					</li>
+					<li>
+						<a href="javascript:;">精品</a>
+					</li>
+					<li>
+						<a href="javascript:);">新品</a>
+					</li>
+					<li>
+						<a href="javascript:;">热销</a>
+					</li>
+					<li>
+						<a href="javascript:;">推荐排序</a>
+					</li>
+					<li>
+						<a href="javascript:;">库存</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="点击对列表排序">虚拟销量</a>
+					</li>
+					<li>操作</li>
+				</ul>
+				<table cellspacing="1" cellpadding="3">
+					<tbody>
+						<!---->
+						<tr class="shops">
+							
+							<td><input name="checkboxes" value="143" type="checkbox">143</td>
+							<td class="first-cell"><span onclick="change(this,'act')">暖怀－白18K金钻石戒指</span></td>
+							<td align="center" class="price"><span onclick="change(this,'act')">ECS000143</span></td>
+							<td align="center" id="goods_number"><span onclick="change(this,'act')" title="点击修改内容" style="">0.00 </span></td>
+							<td align="center"><img src="../images/no.gif" onclick=""></td>
+							<td align="center"><img src="../images/yes.gif" onclick=""></td>
+							<td align="center"><img src="../images/no.gif" onclick=""></td>
+							<td align="center"><img src="../images/yes.gif" onclick=""></td>
+							<td align="center"><span onclick=" ">100</span></td>
+							<td align="center"><span onclick="">1</span></td>
+							<td align="center"><span onclick="#">0</span></td>
+							<td align="center">
+								<a href="#"  title="查看">
+									<img src="../images/icon_view.gif" width="21" height="21" border="0">
+								</a>
+								<a href="javascript:;" title="编辑" onclick="bian(this)">
+									<img src="../images/icon_edit.gif" width="21" height="21" border="0">
+								</a>
+								<a href="javascript:;" title="复制" onclick="add(this)">
+									<img src="../images/icon_copy.gif" width="21" height="21" border="0">
+								</a>
+								<a href="javascript:;" onclick="remove(this)" title="回收站">
+									<img src="../images/icon_trash.gif" width="21" height="21" border="0">
+								</a>
+								<img src="../images/empty.gif" width="21" height="21" border="0"> </td>
+						</tr>
+											<!---->
+						<tr class="shops">
+							
+							<td><input name="checkboxes" value="143" type="checkbox">143</td>
+							<td class="first-cell"><span onclick="change(this,'act')">暖怀－白18K金钻石戒指</span></td>
+							<td align="center"><span onclick="change(this,'act')">ECS000143</span></td>
+			<td  align="center"><span onclick="change(this,'act')" title="点击修改内容" style="">0.00
+    </span></td>
+    
+							<td align="center"><img src="../images/no.gif" onclick=""></td>
+							<td align="center"><img src="../images/yes.gif" onclick=""></td>
+							<td align="center"><img src="../images/no.gif" onclick=""></td>
+							<td align="center"><img src="../images/yes.gif" onclick=""></td>
+							<td align="center"><span onclick=" ">100</span></td>
+							<td align="center"><span onclick="">1</span></td>
+							<td align="center"><span onclick="#">0</span></td>
+							<td align="center">
+								<a href="#"  title="查看">
+									<img src="../images/icon_view.gif" width="21" height="21" border="0">
+								</a>
+								<a href="#" title="编辑">
+									<img src="../images/icon_edit.gif" width="21" height="21" border="0">
+								</a>
+								<a href="javascript:;" title="复制" onclick="add(this)">
+									<img src="../images/icon_copy.gif" width="21" height="21" border="0">
+								</a>
+								<a href="javascript:;" onclick="remove(this)" title="回收站">
+									<img src="../images/icon_trash.gif" width="21" height="21" border="0">
+								</a>
+								<img src="../images/empty.gif" width="21" height="21" border="0"> </td>
+						</tr>
+						<!---->
+					</tbody>
+				</table>
+			</div>
+			</div>
+			<!-- 分页 -->
+				<table id="page-table" cellspacing="0">
+					<tbody>
+						<tr>
+							<td style="background-color: rgb(255, 255, 255);" nowrap="true" align="right">							
+								<div id="turn-page">
+									总计 <span id="totalRecords">1</span> 个记录分为 <span id="totalPages">1</span> 页当前第 <span id="pageCurrent">1</span> 页，每页 <input size="3" id="pageSize" value="10" onkeypress=" " type="text">
+									<span id="page-link">
+          <a href="javascript:;" id="top_page">第一页</a>
+          <a href="javascript:;" id="pre_top">上一页</a>
+          <a href="javascript:;" id="next_bot">下一页</a>
+          <a href="javascript:;"id="bot_page">最末页</a>
+          <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+            <option value="1" selected="selected">1</option>          </select>
+        </span>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!---->
+			<div class="div_not">				
+				<select name="type" id="selAction" onchange="" style="vertical-align: middle; height: 25px;">
+					<option value="" selected="selected">请选择...</option>
+					<option value="trash">回收站</option>
+					<option value="on_sale">上架</option>
+					<option value="not_on_sale">下架</option>
+					<option value="best">精品</option>
+					<option value="not_best">取消精品</option>
+					<option value="new">新品</option>
+					<option value="not_new">取消新品</option>
+					<option value="hot">热销</option>
+					<option value="not_hot">取消热销</option>
+					<option value="move_to">转移到分类</option>
+				</select>
+				<input name="extension_code" value="" type="hidden" style="vertical-align: middle;">
+				<input value=" 确定 " id="btnSubmit" name="btnSubmit" class="button" disabled="true" type="submit" style="vertical-align: middle;">
+			</div>
+					<!---->
+			<div class="bot">	
+共执行 9 个查询，用时 0.025382 秒，Gzip 已禁用，内存占用 3.587 MB<br />
+版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。
+			</div>
+	</body>
+	<script>
+		change = function(obj){
+				var str = $(obj).html();
+			    $(obj).html("");
+		        $(obj).parent().append('<input id="act" type="text" value="'+str+'"/>');
+				$("#act").blur(function(){
+				var str1 = $(this).val();				
+		        $(obj).html(str1);		       
+		       console.log($(this).text())
+	        	setTimeout(function(){
+	      			var shopname = $(this).text();
+			       	var shopprice = $(this).text();
+			        var shopnum = $(this).text();
+			        $(this).remove();
+	        	  	$.ajax({
+						url : "/api.bianbian",
+						type : "post",
+						data :{
+							shopname1 : shopname ,
+							shopprice1 : shopprice,
+							shopnum1 : shopnum
+						},
+						success : function(res){
+							console.log(res.message);				
+						}
+					})
+	      	  }.bind(this),100)
+	       })
+		}
+		
+		//  动态删除
+		remove = function(obj){
+			var remove_id = $(obj).parents().parents(".shops").children(".first-cell").text();
+			console.log(remove_id)
+			$.ajax({
+				url : "/api.remove_",
+				type : "post",
+				data : {
+					remove_id : remove_id
+				},
+				success : function(res){
+					if(res.code == 1){
+						$(obj).parents().parents(".shops").remove();
+						alert("删除成功")
+					}else{
+						alert(res.message);
+					}
+				}
+			}) 
+		}
+		
+		
+
+		
+		var shuNum = 1;
+		var yeNum = $("#pageSize").html();
+
+		//		鼠标点击第一页
+		$("#top_page").click(function(){
+			shuNum = 1;
+			$("#listDiv table tbody .shops").each(function(index,value){
+				$(this).remove();
+			})
+			$("#pageCurrent").html(shuNum);
+			updang(shuNum,yeNum);
+		})
+		
+		
+		//		鼠标点击上一页
+		$("#pre_top").click(function(){
+			shuNum --;
+			if(shuNum <= 1){
+				shuNum = 1;
+			}
+			$("#listDiv table tbody .shops").each(function(index,value){
+				$(this).remove();
+			})
+			$("#pageCurrent").html(shuNum);
+			updang(shuNum,yeNum);
+		})
+		
+		
+		//		鼠标点击下一页
+		$("#next_bot").click(function(){
+			shuNum ++;
+			var ye = parseInt($("#totalPages").html());
+			if(shuNum >= ye){
+				shuNum = ye;
+			}
+			$("#listDiv table tbody .shops").each(function(index,value){
+				$(this).remove();
+			})
+			$("#pageCurrent").html(shuNum);
+			updang(shuNum,yeNum);
+		})
+		
+		
+		
+		
+		//点击最末页                   
+		$("#bot_page").click(function(){
+			var yenum = $("#totalPages").html();
+			$("#listDiv table tbody .shops").each(function(index,value){
+				$(this).remove();
+			})
+			$("#pageCurrent").html(shuNum);
+			updang(yenum,yeNum);
+		})
+		
+		
+		//鼠标失焦 	设置每页多少信息
+		$("#pageSize").blur(function(){
+			$("#listDiv table tbody .shops").each(function(index,value){
+				$(this).remove();
+			})
+			yeNum = $("#pageSize").val();
+			updang(shuNum,yeNum)
+			sum(yeNum)
+		})
+
+
+		//依据商品名或货号查询信息
+		function cha(){
+	$("#search").click(function(){
+		var name = $("#keyword").val()
+		console.log(name);
+		
+		$("#listDiv table tbody .shops").each(function
+
+(index,value){
+			$(this).remove();
+		})
+		$.ajax({
+			type:"post",
+			url:"/api/keyword",
+			data : {
+				keyword : name
+			},
+			success : function(res){
+				var len = res.length;
+				
+				$(res).each(function(index,value){
+					//console.log(value);
+					var data = value;
+						var str = '<tr class="shops"><td><input name="checkboxes" value="143" type="checkbox">'+parseInt(index + 1)+'</td><td class="first-cell"><span onclick="change(this,"act")">'+data.shopname+'</span></td><td align="center" class="price"><span onclick="change(this,"act")">'+data.shopnum+'</span></td><td  align="center" id="goods_number"><span onclick="change(this,"act")" title="点击修改内容" style="">'+data.shopprice+'</span></td><td align="center"><img src="../images/no.gif" onclick=""></td><td align="center"><img src="../images/yes.gif" onclick=""></td><td align="center"><img src="../images/no.gif" onclick=""></td><td align="center"><img src="../images/yes.gif" onclick=""></td><td align="center"><span onclick=" ">100</span></td><td align="center"><span onclick="">1</span></td><td align="center"><span onclick="#">'+data.vitualsales+'</span></td><td align="center"><a href="#"  title="查看"><img src="../images/icon_view.gif" width="21" height="21" border="0"></a><a href="javascript:;" title="编辑" onclick="bian(this)"><img src="../images/icon_edit.gif" width="21" height="21" border="0"></a><a href="javascript:;" title="复制" onclick="add(this)"><img src="../images/icon_copy.gif" width="21" height="21" border="0"></a><a href="javascript:;" onclick="remove(this)" title="回收站"><img src="../images/icon_trash.gif" width="21" height="21" border="0"></a><img src="../images/empty.gif" width="21" height="21" border="0"></td></tr>'
+						$("#listDiv table tbody").append(str);
+				})
+			}
+		});
+	})
+}
+cha();
+
+
+
+
+
+
+
+
+		//获取信息总条数，并向DOM中添加相应的的值
+		function sum(yeNum){
+			$.ajax({
+				type:"post",
+				url:"/api/sum",
+				data : {
+					
+				},
+				success : function(res){
+					var len = res.length;
+					$("#totalRecords").html(len);
+					$("#totalPages").html((Math.ceil(len / parseInt(yeNum))));
+				}
+			});
+		}
+		sum(yeNum);
+
+
+
+
+		//获取数据，并且在页面动态生成信息
+		function updang(shuNum,yeNum){
+			$.ajax({
+				type : "post",
+				url : "/fenye",
+				data : {
+					shuNum : shuNum,
+					yeNum : yeNum
+				},
+				success : function(res){
+					var len = res.length;
+					$(res).each(function(index,value){
+						console.log(res);
+						var data = value;
+						var str = '<tr class="shops"><td><input name="checkboxes" value="143" type="checkbox">'+parseInt(index + 1)+'</td><td class="first-cell"><span onclick="change(this,"act")">'+data.shopname+'</span></td><td align="center" class="price"><span onclick="change(this,"act")">'+data.shopnum+'</span></td><td  align="center" id="goods_number"><span onclick="change(this,"act")" title="点击修改内容" style="">'+data.shopprice+'</span></td><td align="center"><img src="../images/no.gif" onclick=""></td><td align="center"><img src="../images/yes.gif" onclick=""></td><td align="center"><img src="../images/no.gif" onclick=""></td><td align="center"><img src="../images/yes.gif" onclick=""></td><td align="center"><span onclick=" ">100</span></td><td align="center"><span onclick="">1</span></td><td align="center"><span onclick="#">'+data.vitualsales+'</span></td><td align="center"><a href="#"  title="查看"><img src="../images/icon_view.gif" width="21" height="21" border="0"></a><a href="javascript:;" title="编辑" onclick="bian(this)"><img src="../images/icon_edit.gif" width="21" height="21" border="0"></a><a href="javascript:;" title="复制" onclick="add(this)"><img src="../images/icon_copy.gif" width="21" height="21" border="0"></a><a href="javascript:;" onclick="remove(this)" title="回收站"><img src="../images/icon_trash.gif" width="21" height="21" border="0"></a><img src="../images/empty.gif" width="21" height="21" border="0"></td></tr>'
+						$("#listDiv table tbody").append(str);
+					})
+				}
+			})
+		}
+		
+
+		//   动态创建  shops
+		$(function(){
+			$.ajax({
+				url : "/api/goods_1",
+				type : "post",
+				success : function(res){
+					var len = res.length;
+					$("#listDiv table tbody").children().remove()
+					for(var i = 0;i < len;i ++){
+						var shopname = res[i].shopname;
+						var shopnum = res[i].shopnum;
+						var shopprice = res[i].shopprice;
+						var vitualsales = res[i].vitualsales; 
+						var obj = '<tr class="shops"><td><input name="checkboxes" value="143" type="checkbox">'+parseInt(i + 1)+'</td><td class="first-cell"><span onclick="change(this,"act")">'+shopname+'</span></td><td align="center"><span onclick="change(this,"act")">'+shopnum+'</span></td><td  align="center"><span onclick="change(this,"act")" title="点击修改内容" style="">'+shopprice+'</span></td><td align="center"><img src="../images/no.gif" onclick=""></td><td align="center"><img src="../images/yes.gif" onclick=""></td><td align="center"><img src="../images/no.gif" onclick=""></td><td align="center"><img src="../images/yes.gif" onclick=""></td><td align="center"><span onclick=" ">100</span></td><td align="center"><span onclick="">1</span></td><td align="center"><span onclick="#">'+vitualsales+'</span></td><td align="center"><a href="#"  title="查看"><img src="../images/icon_view.gif" width="21" height="21" border="0"></a><a href="javascript:;" title="编辑" onclick="bian(this)"><img src="../images/icon_edit.gif" width="21" height="21" border="0"></a><a href="javascript:;" title="复制" onclick="add(this)"><img src="../images/icon_copy.gif" width="21" height="21" border="0"></a><a href="javascript:;" onclick="remove(this)" title="回收站"><img src="../images/icon_trash.gif" width="21" height="21" border="0"></a><img src="../images/empty.gif" width="21" height="21" border="0"></td></tr>'
+						$("#listDiv table tbody").append(obj);
+					}	
+				}
+			})
+		})
+				
+		
+
+		//  点击编辑更改信息  跳转页面
+	     bian = function(ji){	
+	     	console.log($(ji).parents().parents(".shops").children(".first-cell").text())
+			$.ajax({
+				url : "/updata",
+				type : "post",
+				data : {
+					shopname : $(ji).parents().parents(".shops").children(".first-cell").text()
+				},
+				success : function(res){
+					setTimeout(function(){
+						console.log(res);	
+							$.ajax({
+								type:"get",
+								url:"/bianji",
+								async:true,					
+								success:function(ress){
+									$(".sec_rig").html(ress);
+									$("#shopname").val(res[0].shopname);
+									$("#shopnum").val(res[0].shopnum);
+									$("#shopbard").val(res[0].shopbard);
+									$("#shopprice").val(res[0].shopprice);
+								    $("#streetprice").val(res[0].streetprice);
+									$("#vitualsales").val(res[0].vitualsales);
+								}
+							});
+					},1000)
+				}
+			})
+		}
+
+
+
+
+
+	</script>
+</html>
+	
+	
